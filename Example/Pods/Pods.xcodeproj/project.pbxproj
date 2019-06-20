@@ -46,10 +46,10 @@
 		A6F45F5B22BBBE120069221A /* today_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F45F5822BBBE120069221A /* today_icon@2x.png */; };
 		A6F45F5C22BBBE120069221A /* today_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F45F5922BBBE120069221A /* today_icon@3x.png */; };
 		A6F45F5D22BBBE120069221A /* today_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F45F5922BBBE120069221A /* today_icon@3x.png */; };
-		A6F45F6022BBC0350069221A /* demo_v1.0.0.gif in Resources */ = {isa = PBXBuildFile; fileRef = A6F45F5E22BBC0350069221A /* demo_v1.0.0.gif */; };
-		A6F45F6122BBC0350069221A /* demo_v1.0.0.gif in Resources */ = {isa = PBXBuildFile; fileRef = A6F45F5E22BBC0350069221A /* demo_v1.0.0.gif */; };
 		A6F45F6222BBC0350069221A /* screenshot_v1.0.0.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F45F5F22BBC0350069221A /* screenshot_v1.0.0.png */; };
 		A6F45F6322BBC0350069221A /* screenshot_v1.0.0.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F45F5F22BBC0350069221A /* screenshot_v1.0.0.png */; };
+		A6F45F6522BBC12E0069221A /* demo_v1.0.0.gif in Resources */ = {isa = PBXBuildFile; fileRef = A6F45F6422BBC12E0069221A /* demo_v1.0.0.gif */; };
+		A6F45F6622BBC12E0069221A /* demo_v1.0.0.gif in Resources */ = {isa = PBXBuildFile; fileRef = A6F45F6422BBC12E0069221A /* demo_v1.0.0.gif */; };
 		B7A9B95695C216B02B89955740FF92BD /* YYCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1E3CC43AAD13ED1CD381700B9085AF /* YYCalendar-dummy.m */; };
 		B8D19A10C46BC6294D4B572D02D1B2E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		C66FE11B569C747347A88B2551C91241 /* Pods-YYCalendar_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B8E70328479F408C19A6E6CC12C9754 /* Pods-YYCalendar_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -113,8 +113,8 @@
 		A6F45F5422BBAA910069221A /* DayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButton.swift; sourceTree = "<group>"; };
 		A6F45F5822BBBE120069221A /* today_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "today_icon@2x.png"; sourceTree = "<group>"; };
 		A6F45F5922BBBE120069221A /* today_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "today_icon@3x.png"; sourceTree = "<group>"; };
-		A6F45F5E22BBC0350069221A /* demo_v1.0.0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo_v1.0.0.gif; sourceTree = "<group>"; };
 		A6F45F5F22BBC0350069221A /* screenshot_v1.0.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot_v1.0.0.png; sourceTree = "<group>"; };
+		A6F45F6422BBC12E0069221A /* demo_v1.0.0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo_v1.0.0.gif; sourceTree = "<group>"; };
 		AF6D3FFD51C3D0F7B574DB5DEED2A1BD /* YYCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYCalendar-umbrella.h"; sourceTree = "<group>"; };
 		B30461FCF37535030CF135F37AD2854D /* Pods-YYCalendar_Example-YYCalendar_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YYCalendar_Example-YYCalendar_Tests-Info.plist"; sourceTree = "<group>"; };
 		B94FF651F102971AD34595E24E0261B1 /* YYCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YYCalendar.modulemap; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 		A6F45F5722BBB6BF0069221A /* ScreenShot */ = {
 			isa = PBXGroup;
 			children = (
-				A6F45F5E22BBC0350069221A /* demo_v1.0.0.gif */,
+				A6F45F6422BBC12E0069221A /* demo_v1.0.0.gif */,
 				A6F45F5F22BBC0350069221A /* screenshot_v1.0.0.png */,
 			);
 			path = ScreenShot;
@@ -468,11 +468,11 @@
 				969F3B0D22BB520500E9C05F /* calendar_prev@3x.png in Resources */,
 				A6F45F6222BBC0350069221A /* screenshot_v1.0.0.png in Resources */,
 				969F3B1122BB520500E9C05F /* calendar_next@3x.png in Resources */,
+				A6F45F6522BBC12E0069221A /* demo_v1.0.0.gif in Resources */,
 				969F3B0F22BB520500E9C05F /* calendar_prev_pr@3x.png in Resources */,
 				969F3B0522BB520500E9C05F /* calendar_prev_pr@2x.png in Resources */,
 				969F3B1F22BB524300E9C05F /* top_btn_close_pr@2x.png in Resources */,
 				A6F45F5C22BBBE120069221A /* today_icon@3x.png in Resources */,
-				A6F45F6022BBC0350069221A /* demo_v1.0.0.gif in Resources */,
 				969F3B0722BB520500E9C05F /* calendar_prev@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,11 +491,11 @@
 				969F3B0E22BB520500E9C05F /* calendar_prev@3x.png in Resources */,
 				A6F45F6322BBC0350069221A /* screenshot_v1.0.0.png in Resources */,
 				969F3B1222BB520500E9C05F /* calendar_next@3x.png in Resources */,
+				A6F45F6622BBC12E0069221A /* demo_v1.0.0.gif in Resources */,
 				969F3B1022BB520500E9C05F /* calendar_prev_pr@3x.png in Resources */,
 				969F3B0622BB520500E9C05F /* calendar_prev_pr@2x.png in Resources */,
 				969F3B2022BB524300E9C05F /* top_btn_close_pr@2x.png in Resources */,
 				A6F45F5D22BBBE120069221A /* today_icon@3x.png in Resources */,
-				A6F45F6122BBC0350069221A /* demo_v1.0.0.gif in Resources */,
 				969F3B0822BB520500E9C05F /* calendar_prev@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
