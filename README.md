@@ -17,13 +17,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Usage
 
-To create and show a bottomSheet, first of all, import the module at the beginning of the file:
+To create and show a calendar, first of all, import the module at the beginning of the file:
 
 ```swift
 import YYCalendar
 ```
 
-First of all, you can show the bottomUpTable as below:<br>
+First of all, you can show the calendar as below:<br>
 *you have to equate **format** of date parameter with format parameter.*
 
 ```swift
