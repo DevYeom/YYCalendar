@@ -1,0 +1,22 @@
+{
+  "name": "YYCalendar",
+  "version": "0.1.0",
+  "summary": "A short description of YYCalendar.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/SY.Yeom/YYCalendar",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "SY.Yeom": "sh18100619@goldwing.shinhan.com"
+  },
+  "source": {
+    "git": "https://github.com/SY.Yeom/YYCalendar.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "YYCalendar/Classes/**/*"
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="YYCalendar_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avE-zr-6kq">
+                                <rect key="frame" x="46" y="192" width="283" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dAw-Pi-aab"/>
+                                </constraints>
+                                <state key="normal" title="Show YYCalendar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCalendar:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0Aw-sY-Ngu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select date from YYCalendar :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaX-cJ-bCm">
+                                <rect key="frame" x="64.5" y="121" width="246.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Any date format is available!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xon-wd-1Pm">
+                                <rect key="frame" x="80" y="70" width="215" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6e-Su-w08">
+                                <rect key="frame" x="46" y="262" width="283" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Did-Af-aLK"/>
+                                </constraints>
+                                <state key="normal" title="Show YYCalendar (disable after today)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCalendar2:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ent-1k-B52"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q6e-Su-w08" secondAttribute="trailing" constant="30" id="1h4-ti-2ZF"/>
+                            <constraint firstItem="Xon-wd-1Pm" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Fbm-NH-u4g"/>
+                            <constraint firstItem="zaX-cJ-bCm" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="PP5-gl-iTI"/>
+                            <constraint firstItem="Q6e-Su-w08" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="30" id="TTn-ZJ-2AC"/>
+                            <constraint firstItem="zaX-cJ-bCm" firstAttribute="top" secondItem="Xon-wd-1Pm" secondAttribute="bottom" constant="30" id="h1A-kY-C7T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="avE-zr-6kq" secondAttribute="trailing" constant="30" id="iYP-Yd-9ly"/>
+                            <constraint firstItem="Xon-wd-1Pm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="oYP-a8-z7j"/>
+                            <constraint firstItem="avE-zr-6kq" firstAttribute="top" secondItem="zaX-cJ-bCm" secondAttribute="bottom" constant="50" id="tI8-S5-REE"/>
+                            <constraint firstItem="Q6e-Su-w08" firstAttribute="top" secondItem="avE-zr-6kq" secondAttribute="bottom" constant="30" id="uQh-Cu-E3m"/>
+                            <constraint firstItem="avE-zr-6kq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="30" id="z7N-1W-kFL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="selectedDateLabel" destination="zaX-cJ-bCm" id="LYJ-8n-ETd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+</document>

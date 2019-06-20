@@ -1,0 +1,9 @@
+use_frameworks!
+
+target 'YYCalendar_Example' do
+	pod 'YYCalendar', :path => '../'
+
+	target 'YYCalendar_Tests' do
+		pod 'YYCalendar', :path => '../'
+	end
+end

@@ -1,0 +1,16 @@
+PODS:
+  - YYCalendar (0.1.0)
+
+DEPENDENCIES:
+  - YYCalendar (from `../`)
+
+EXTERNAL SOURCES:
+  YYCalendar:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  YYCalendar: c86c3fbc6970ddf87d21cd72a185ea13ed65a0f0
+
+PODFILE CHECKSUM: ba3af5fe043669971e2c881a6e064ef3dece8147
+
+COCOAPODS: 1.7.2
