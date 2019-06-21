@@ -85,3 +85,18 @@ class Useful {
 		return UIColor.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
 	}
 }
+
+extension Date {
+	func startOfMonth() -> Date {
+		var dateComponent = Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self))
+		dateComponent.hour = 12
+		dateComponent.minute = 0
+		dateComponent.second = 0
+
+		return Calendar.current.date(from: dateComponent)!
+	}
+
+	func endOfMonth() -> Date {
+		return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+	}
+}

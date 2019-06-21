@@ -13,7 +13,7 @@ When you need to let users choose date from calendar. You can use YYCalendar. Si
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-![](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/demo_v1.0.0.gif)
+![Demo](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/demo_v1.0.0.gif)
 
 ## Usage
 
@@ -24,15 +24,29 @@ import YYCalendar
 ```
 
 First of all, you can show the calendar as below:<br>
-*you have to equate **format** of date parameter with format parameter.*
+> *you have to equate **format** of date parameter with format parameter.*
 
 ```swift
-let calendar = YYCalendar(date: "06/10/2019", format: "MM/dd/yyyy", disableAfterToday: false) { date in
+let calendar = YYCalendar(langType: .ENG, date: "06/10/2019", format: "MM/dd/yyyy", disableAfterToday: false) { date in
 self.selectedDateLabel.text = date
 }
 
 calendar.show()
 ```
+
+## Language Type
+
+Week label can be changed by selecting langType
+
+| langType | weekLabel |
+|---|---|
+| ENG | SUN, MON, TUE, WED, THU, FRI, SAT |
+| ENG2 | Sun, Mon, Tue, Wed, Thu, Fri, Sat |
+| ENG3 | S, M, T, W, T, F, S |
+| KOR | 일, 월, 화, 수, 목, 금, 토 |
+| CHN | 日, 月, 火, 水, 木, 金, 土 |
+
+![ENG_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng_week.png) ![ENG2_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng2_week.png) ![ENG3_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng3_week.png) ![KOR_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/kor_week.png) ![CHN_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/chn_week.png)
 
 ## Installation
 

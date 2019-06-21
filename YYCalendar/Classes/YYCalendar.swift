@@ -11,6 +11,14 @@ import Foundation
 public class YYCalendar: UIViewController {
 	public typealias SelectHandler = (String) -> ()
 
+	public enum LangType {
+		case ENG
+		case ENG2
+		case ENG3
+		case KOR
+		case CHN
+	}
+
 	// MARK: - static constants
 	static let ShowDuration: Double = 0.3
 	static let HideDuration: Double = 0.3
@@ -91,8 +99,9 @@ public class YYCalendar: UIViewController {
 	public var selectHandler: SelectHandler?
 	public var inquiryDate: Date = Date() // input date from client
 	public var dateFormat: String = "" // input date format from client
-	let weekArray: [String] = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
+	public var langType: LangType = .ENG // default value is English
 	let calendar: Calendar = Calendar(identifier: .gregorian)
+	var weekArray: [String] = ENG_WEEK
 
 	// Detached from inquiryDate
 	var inputYear: Int = 0
@@ -111,13 +120,15 @@ public class YYCalendar: UIViewController {
 	var todayDay: Int = Calendar.current.component(.day, from: Date())
 
 	// MARK: - Initialization
-	public init(date: String, format: String, disableAfterToday: Bool, completion selectHandler: SelectHandler?) {
+	public init(langType type: LangType, date: String, format: String, disableAfterToday: Bool, completion selectHandler: SelectHandler?) {
 		super.init(nibName: nil, bundle: nil)
+		self.langType = type
 		self.dateFormat = format
 		self.inquiryDate = Useful.stringToDate(date, format: self.dateFormat) ?? Date()
 		self.needToDisableAfterToday = disableAfterToday
 		self.selectHandler = selectHandler
 
+		self.setupLangType()
 		self.setupDate()
 	}
 
@@ -132,6 +143,23 @@ public class YYCalendar: UIViewController {
 	// Cannot use when keywindow is nil
 	func viewNotReady() -> Bool {
 		return UIApplication.shared.keyWindow == nil
+	}
+
+	// MARK: - Setup
+	// Week label can be changed by selecting langType
+	func setupLangType() {
+		switch self.langType {
+		case .ENG:
+			self.weekArray = ENG_WEEK
+		case .ENG2:
+			self.weekArray = ENG2_WEEK
+		case .ENG3:
+			self.weekArray = ENG3_WEEK
+		case .KOR:
+			self.weekArray = KOR_WEEK
+		case .CHN:
+			self.weekArray = CHN_WEEK
+		}
 	}
 
 	// Set date componet by detaching from inquiryDate
@@ -504,6 +532,7 @@ public class YYCalendar: UIViewController {
 		}
 	}
 
+	// MARK: - Click Event
 	@objc func changeMonthOrYear(_ sender: UIButton) {
 		switch sender.restorationIdentifier {
 		case "previousMonth":
@@ -577,20 +606,5 @@ public class YYCalendar: UIViewController {
 				self.view.alpha = 0
 			}, completion: completion)
 		}
-	}
-}
-
-extension Date {
-	func startOfMonth() -> Date {
-		var dateComponent = Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self))
-		dateComponent.hour = 12
-		dateComponent.minute = 0
-		dateComponent.second = 0
-
-		return Calendar.current.date(from: dateComponent)!
-	}
-
-	func endOfMonth() -> Date {
-		return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
 	}
 }
