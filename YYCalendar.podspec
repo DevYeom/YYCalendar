@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 	s.name             = 'YYCalendar'
-	s.version          = '1.0.2'
+	s.version          = '1.0.3'
 	s.swift_version    = '5.0'
 	s.summary          = 'Very Simple and Useful Calendar'
 
