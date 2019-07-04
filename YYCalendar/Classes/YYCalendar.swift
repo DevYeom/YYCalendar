@@ -8,7 +8,7 @@
 import Foundation
 
 @available(iOS 10.0, *)
-public class YYCalendar: UIViewController {
+@objcMembers public class YYCalendar: UIViewController {
 	public typealias SelectHandler = (String) -> ()
 
 	public enum LangType {
