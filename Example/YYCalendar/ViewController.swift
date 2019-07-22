@@ -10,32 +10,40 @@ import UIKit
 import YYCalendar
 
 class ViewController: UIViewController {
-	@IBOutlet weak var selectedDateLabel: UILabel!
+    @IBOutlet weak var selectedDateLabel: UILabel!
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
-	}
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
-	@IBAction func showCalendar(_ sender: UIButton) {
-		let calendar = YYCalendar(langType: .ENG, date: "07/01/2019", format: "MM/dd/yyyy", disableAfterToday: false) { date in
-			self.selectedDateLabel.text = date
-		}
+    @IBAction func showCalendar(_ sender: UIButton) {
+        let calendar = YYCalendar(langType: .ENG, date: "07/01/2019", format: "MM/dd/yyyy", disableAfterToday: false) { date in
+            self.selectedDateLabel.text = date
+        }
 
-		calendar.show()
-	}
+        calendar.show()
+    }
 
-	@IBAction func showCalendar2(_ sender: UIButton) {
-		let calendar = YYCalendar(langType: .KOR, date: "07/01/2019", format: "MM/dd/yyyy", disableAfterToday: true) { date in
-			self.selectedDateLabel.text = date
-		}
+    @IBAction func showCalendar2(_ sender: UIButton) {
+        let calendar = YYCalendar(langType: .KOR, date: "07/01/2019", format: "MM/dd/yyyy", disableAfterToday: true) { date in
+            self.selectedDateLabel.text = date
+        }
 
-		calendar.show()
-	}
+        calendar.show()
+    }
+
+    @IBAction func showCalendar3(_ sender: UIButton) {
+        let calendar = YYCalendar(langType: .KOR, date: "07/05/2019", minDate: "07/05/2019", maxDate: "07/15/2019", format: "MM/dd/yyyy") { date in
+            self.selectedDateLabel.text = date
+        }
+
+        calendar.show()
+    }
 }
 

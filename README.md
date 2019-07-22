@@ -28,11 +28,30 @@ First of all, you can show the calendar as below:<br>
 
 ```swift
 let calendar = YYCalendar(langType: .ENG, date: "06/10/2019", format: "MM/dd/yyyy", disableAfterToday: false) { date in
-self.selectedDateLabel.text = date
+    self.selectedDateLabel.text = date
 }
 
 calendar.show()
 ```
+
+## Calendar Type
+
+There are two types of calendar.
+
+| calendarType | description |
+|---|---|
+| normal | you can select all of the date periods |
+| limited | you can limit selectable date periods |
+
+```swift
+// normal type
+init(langType type: LangType, date: String, format: String, disableAfterToday: Bool, completion selectHandler: SelectHandler?)
+
+// limited type
+init(langType type: LangType, date: String, minDate: String?, maxDate: String?, format: String, completion selectHandler: SelectHandler?)
+```
+
+![normalType_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/normal_type.png) ![limitedType_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/limited_type.png)
 
 ## Language Type
 
