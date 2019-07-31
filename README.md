@@ -27,28 +27,47 @@ First of all, you can show the calendar as below:<br>
 > *you have to equate **format** of date parameter with format parameter.*
 
 ```swift
-let calendar = YYCalendar(langType: .ENG, date: "06/10/2019", format: "MM/dd/yyyy", disableAfterToday: false) { date in
+let calendar = YYCalendar(normalCalendarLangType: .ENG, date: "07/01/2019", format: "MM/dd/yyyy") { (date) in
     self.selectedDateLabel.text = date
 }
 
 calendar.show()
 ```
 
+You can set calendar style properties (color, font, ...)
+
+```swift
+calendar.dimmedBackgroundColor: UIColor = UIColor.black
+calendar.dimmedBackgroundAlpha: CGFloat = 0.5
+calendar.headerViewBackgroundColor: UIColor = Useful.getUIColor(245, 245, 245)
+calendar.bodyViewBackgroundColor: UIColor = Useful.getUIColor(255, 255, 255)
+calendar.sundayColor: UIColor = Useful.getUIColor(235, 61, 79)
+calendar.disabledSundayColor: UIColor = Useful.getUIColor(251, 197, 202)
+calendar.saturdayColor: UIColor = Useful.getUIColor(53, 113, 214)
+calendar.disabledSaturdayColor: UIColor = Useful.getUIColor(194, 212, 243)
+calendar.defaultDayColor: UIColor = Useful.getUIColor(51, 51, 51)
+calendar.disabledDefaultDayColor: UIColor = Useful.getUIColor(193, 193, 193)
+calendar.lineSeparatorColor: UIColor = Useful.getUIColor(233, 233, 233)
+calendar.headerLabelFont: UIFont = UIFont.systemFont(ofSize: 24)
+calendar.weekLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
+calendar.dayLabelFont: UIFont = UIFont.systemFont(ofSize: 19)
+```
+
 ## Calendar Type
 
 There are two types of calendar.
 
-| calendarType | description |
+| Calendar Type | Description |
 |---|---|
 | normal | you can select all of the date periods |
 | limited | you can limit selectable date periods |
 
 ```swift
 // normal type
-init(langType type: LangType, date: String, format: String, disableAfterToday: Bool, completion selectHandler: SelectHandler?)
+init(normalCalendarLangType langType: LangType, date: String, format: String, completion: SelectHandler?)
 
 // limited type
-init(langType type: LangType, date: String, minDate: String?, maxDate: String?, format: String, completion selectHandler: SelectHandler?)
+init(limitedCalendarLangType langType: LangType, date: String, minDate: String?, maxDate: String?, format: String, completion: SelectHandler?)
 ```
 
 ![normalType_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/normal_type.png) ![limitedType_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/limited_type.png)

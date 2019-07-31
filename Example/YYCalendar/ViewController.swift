@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showCalendar(_ sender: UIButton) {
-        let calendar = YYCalendar(langType: .ENG, date: "07/01/2019", format: "MM/dd/yyyy", disableAfterToday: false) { date in
+        let calendar = YYCalendar(normalCalendarLangType: .ENG, date: "07/01/2019", format: "MM/dd/yyyy") { (date) in
             self.selectedDateLabel.text = date
         }
 
@@ -31,15 +31,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showCalendar2(_ sender: UIButton) {
-        let calendar = YYCalendar(langType: .KOR, date: "07/01/2019", format: "MM/dd/yyyy", disableAfterToday: true) { date in
-            self.selectedDateLabel.text = date
-        }
-
-        calendar.show()
-    }
-
-    @IBAction func showCalendar3(_ sender: UIButton) {
-        let calendar = YYCalendar(langType: .KOR, date: "07/05/2019", minDate: "07/05/2019", maxDate: "07/15/2019", format: "MM/dd/yyyy") { date in
+        let calendar = YYCalendar(limitedCalendarLangType: .KOR, date: "07/10/2019", minDate: "07/05/2019", maxDate: "07/20/2019", format: "MM/dd/yyyy") { (date) in
             self.selectedDateLabel.text = date
         }
 

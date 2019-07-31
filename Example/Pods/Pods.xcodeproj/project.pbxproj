@@ -12,8 +12,14 @@
 		2388E208A627F745A3B97D7ACF3D5290 /* Pods-YYCalendar_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C542CC87BFDD2BACA1CA098FD631ADD9 /* Pods-YYCalendar_Example-dummy.m */; };
 		77875345D13A72125CE9DC57A1A1BD7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		864633BAF2F832D11A08C7F8E0B8A758 /* YYCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF6D3FFD51C3D0F7B574DB5DEED2A1BD /* YYCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		96661EFE22BC6B700092C3A9 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96661EFD22BC6B700092C3A9 /* Language.swift */; };
-		96661EFF22BC6B700092C3A9 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96661EFD22BC6B700092C3A9 /* Language.swift */; };
+		9621B28322F1585400C4FC4F /* NormalCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621B28222F1585400C4FC4F /* NormalCalendar.swift */; };
+		9621B28422F1585400C4FC4F /* NormalCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621B28222F1585400C4FC4F /* NormalCalendar.swift */; };
+		9621B28622F1586A00C4FC4F /* LimitedCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621B28522F1586A00C4FC4F /* LimitedCalendar.swift */; };
+		9621B28722F1586A00C4FC4F /* LimitedCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621B28522F1586A00C4FC4F /* LimitedCalendar.swift */; };
+		9621B28922F1672400C4FC4F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621B28822F1672400C4FC4F /* Image.swift */; };
+		9621B28A22F1672400C4FC4F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621B28822F1672400C4FC4F /* Image.swift */; };
+		96661EFE22BC6B700092C3A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96661EFD22BC6B700092C3A9 /* Constants.swift */; };
+		96661EFF22BC6B700092C3A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96661EFD22BC6B700092C3A9 /* Constants.swift */; };
 		96661F0522BC73310092C3A9 /* eng_week.png in Resources */ = {isa = PBXBuildFile; fileRef = 96661F0022BC73300092C3A9 /* eng_week.png */; };
 		96661F0622BC73310092C3A9 /* eng_week.png in Resources */ = {isa = PBXBuildFile; fileRef = 96661F0022BC73300092C3A9 /* eng_week.png */; };
 		96661F0722BC73310092C3A9 /* chn_week.png in Resources */ = {isa = PBXBuildFile; fileRef = 96661F0122BC73300092C3A9 /* chn_week.png */; };
@@ -104,8 +110,11 @@
 		7B5A375DD2D2F4168343ABC35B5C5AF1 /* Pods-YYCalendar_Example-YYCalendar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YYCalendar_Example-YYCalendar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E71DDA228F1537A1A7E53DA6CAFF464 /* Pods_YYCalendar_Example_YYCalendar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YYCalendar_Example_YYCalendar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F85B78373A1965C78DDCEAE49786EC /* Pods-YYCalendar_Example-YYCalendar_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YYCalendar_Example-YYCalendar_Tests-dummy.m"; sourceTree = "<group>"; };
+		9621B28222F1585400C4FC4F /* NormalCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalCalendar.swift; sourceTree = "<group>"; };
+		9621B28522F1586A00C4FC4F /* LimitedCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitedCalendar.swift; sourceTree = "<group>"; };
+		9621B28822F1672400C4FC4F /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		963A53E506C5AF115EE86E1D4F5DEAF2 /* Pods-YYCalendar_Example-YYCalendar_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YYCalendar_Example-YYCalendar_Tests-umbrella.h"; sourceTree = "<group>"; };
-		96661EFD22BC6B700092C3A9 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		96661EFD22BC6B700092C3A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		96661F0022BC73300092C3A9 /* eng_week.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eng_week.png; sourceTree = "<group>"; };
 		96661F0122BC73300092C3A9 /* chn_week.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chn_week.png; sourceTree = "<group>"; };
 		96661F0222BC73300092C3A9 /* eng3_week.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eng3_week.png; sourceTree = "<group>"; };
@@ -214,13 +223,24 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
+		9621B28122F1581200C4FC4F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A6F45F5422BBAA910069221A /* DayButton.swift */,
+				9621B28222F1585400C4FC4F /* NormalCalendar.swift */,
+				9621B28522F1586A00C4FC4F /* LimitedCalendar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		969F3AE622BB3FC300E9C05F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9621B28122F1581200C4FC4F /* Components */,
 				969F3AF422BB49F400E9C05F /* Useful.swift */,
 				969F3AF122BB498C00E9C05F /* YYCalendar.swift */,
-				A6F45F5422BBAA910069221A /* DayButton.swift */,
-				96661EFD22BC6B700092C3A9 /* Language.swift */,
+				96661EFD22BC6B700092C3A9 /* Constants.swift */,
+				9621B28822F1672400C4FC4F /* Image.swift */,
 			);
 			name = Classes;
 			path = YYCalendar/Classes;
@@ -550,7 +570,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6F45F5522BBAA910069221A /* DayButton.swift in Sources */,
-				96661EFE22BC6B700092C3A9 /* Language.swift in Sources */,
+				9621B28922F1672400C4FC4F /* Image.swift in Sources */,
+				96661EFE22BC6B700092C3A9 /* Constants.swift in Sources */,
+				9621B28322F1585400C4FC4F /* NormalCalendar.swift in Sources */,
+				9621B28622F1586A00C4FC4F /* LimitedCalendar.swift in Sources */,
 				969F3AF222BB498C00E9C05F /* YYCalendar.swift in Sources */,
 				2388E208A627F745A3B97D7ACF3D5290 /* Pods-YYCalendar_Example-dummy.m in Sources */,
 				969F3AF522BB49F400E9C05F /* Useful.swift in Sources */,
@@ -562,7 +585,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6F45F5622BBAA910069221A /* DayButton.swift in Sources */,
-				96661EFF22BC6B700092C3A9 /* Language.swift in Sources */,
+				9621B28A22F1672400C4FC4F /* Image.swift in Sources */,
+				96661EFF22BC6B700092C3A9 /* Constants.swift in Sources */,
+				9621B28422F1585400C4FC4F /* NormalCalendar.swift in Sources */,
+				9621B28722F1586A00C4FC4F /* LimitedCalendar.swift in Sources */,
 				969F3AF322BB498C00E9C05F /* YYCalendar.swift in Sources */,
 				B7A9B95695C216B02B89955740FF92BD /* YYCalendar-dummy.m in Sources */,
 				969F3AF622BB49F400E9C05F /* Useful.swift in Sources */,

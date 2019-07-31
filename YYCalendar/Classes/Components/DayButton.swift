@@ -33,7 +33,7 @@ class DayButton: UIButton {
         }
 
         didSet {
-            backgroundColor = isHighlighted ? selectedDayColor : UIColor.white
+            backgroundColor = isHighlighted ? selectedDayColor : UIColor.clear
             titleLabel?.textColor = isHighlighted ? UIColor.white : beforeTextColor
         }
     }
