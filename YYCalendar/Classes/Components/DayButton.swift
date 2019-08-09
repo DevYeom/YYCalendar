@@ -13,12 +13,12 @@ class DayButton: UIButton {
     var selectedDayColor: UIColor = Useful.getUIColor(55, 137, 220)
     var beforeTextColor: UIColor = Useful.getUIColor(51, 51, 51)
     var todayIconImageView: UIImageView!
-    var buttonStyle: ButtonStyle = .roundishSquare
+    var dayButtonStyle: DayButtonStyle = .roundishSquare
 
-    // To set the buttonStyle
+    // To set the dayButtonStyle
     override var bounds: CGRect {
         didSet {
-            switch buttonStyle {
+            switch dayButtonStyle {
             case .roundishSquare:
                 self.layer.cornerRadius = 10
             case .square:
@@ -29,13 +29,13 @@ class DayButton: UIButton {
         }
     }
 
-    init(style: ButtonStyle) {
+    init(style: DayButtonStyle) {
         super.init(frame: CGRect.zero)
 
         setupTodayIcon()
         setupAutoLayout()
 
-        self.buttonStyle = style
+        self.dayButtonStyle = style
         self.todayIconImageView.isHidden = true
     }
 

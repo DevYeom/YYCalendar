@@ -30,7 +30,7 @@ import UIKit
     var dayStackView: UIStackView!
 
     // MARK: - Calendar Style
-    var buttonStyle: ButtonStyle = .roundishSquare
+    var dayButtonStyle: DayButtonStyle = .roundishSquare
     var hideDuration: Double = 0.3
     var dimmedBackgroundColor: UIColor = UIColor.black
     var dimmedBackgroundAlpha: CGFloat = 0.5
@@ -300,7 +300,7 @@ import UIKit
             tempStackView.distribution = .fillEqually
 
             for column in 1...7 {
-                let tempButton = DayButton(style: buttonStyle)
+                let tempButton = DayButton(style: dayButtonStyle)
                 tempButton.translatesAutoresizingMaskIntoConstraints = false
                 tempButton.heightAnchor.constraint(equalTo: tempButton.widthAnchor).isActive = true
                 tempButton.titleLabel?.font = self.dayLabelFont
@@ -479,29 +479,6 @@ import UIKit
             button.todayIconImageView.isHidden = false
         } else {
             button.todayIconImageView.isHidden = true
-        }
-    }
-
-    // set dayButton's color
-    func setDayButtonStyle(button: DayButton, weekDay: Int, enabled: Bool) {
-        button.isEnabled = enabled
-
-        if enabled {
-            if weekDay == 1 { // Sunday
-                button.setTitleColor(self.sundayColor, for: .normal)
-            } else if weekDay == 7 { // Saturday
-                button.setTitleColor(self.saturdayColor, for: .normal)
-            } else { // Weekday
-                button.setTitleColor(self.defaultDayColor, for: .normal)
-            }
-        } else {
-            if weekDay == 1 { // Sunday
-                button.setTitleColor(self.disabledSundayColor, for: .normal)
-            } else if weekDay == 7 { // Saturday
-                button.setTitleColor(self.disabledSaturdayColor, for: .normal)
-            } else { // Weekday
-                button.setTitleColor(self.disabledDefaultDayColor, for: .normal)
-            }
         }
     }
 

@@ -36,15 +36,15 @@ import Foundation
     }
 
     // MARK: - Calendar Style Properties
-    public var buttonStyle: ButtonStyle = .roundishSquare {
+    public var dayButtonStyle: DayButtonStyle = .roundishSquare {
         didSet {
             weak var weakSelf = self
             if let weakSelf = weakSelf {
                 switch componentType {
                 case .normal:
-                    weakSelf.normalCalendar?.buttonStyle = buttonStyle
+                    weakSelf.normalCalendar?.dayButtonStyle = dayButtonStyle
                 case .limited:
-                    weakSelf.limitedCalendar?.buttonStyle = buttonStyle
+                    weakSelf.limitedCalendar?.dayButtonStyle = dayButtonStyle
                 }
             }
         }
