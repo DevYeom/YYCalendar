@@ -31,7 +31,7 @@ public enum LangType {
     case CHN
 }
 
-public enum ButtonStyle {
+public enum DayButtonStyle {
     case roundishSquare
     case square
     case circle

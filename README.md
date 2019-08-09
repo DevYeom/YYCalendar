@@ -37,20 +37,22 @@ calendar.show()
 You can set calendar style properties (color, font, ...)
 
 ```swift
-calendar.dimmedBackgroundColor: UIColor = UIColor.black
-calendar.dimmedBackgroundAlpha: CGFloat = 0.5
-calendar.headerViewBackgroundColor: UIColor = Useful.getUIColor(245, 245, 245)
-calendar.bodyViewBackgroundColor: UIColor = Useful.getUIColor(255, 255, 255)
-calendar.sundayColor: UIColor = Useful.getUIColor(235, 61, 79)
-calendar.disabledSundayColor: UIColor = Useful.getUIColor(251, 197, 202)
-calendar.saturdayColor: UIColor = Useful.getUIColor(53, 113, 214)
-calendar.disabledSaturdayColor: UIColor = Useful.getUIColor(194, 212, 243)
-calendar.defaultDayColor: UIColor = Useful.getUIColor(51, 51, 51)
-calendar.disabledDefaultDayColor: UIColor = Useful.getUIColor(193, 193, 193)
-calendar.lineSeparatorColor: UIColor = Useful.getUIColor(233, 233, 233)
-calendar.headerLabelFont: UIFont = UIFont.systemFont(ofSize: 24)
-calendar.weekLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
-calendar.dayLabelFont: UIFont = UIFont.systemFont(ofSize: 19)
+calendar.dayButtonStyle = DayButtonStyle (.roundishSquare, .square, .circle)
+calendar.dimmedBackgroundColor = UIColor
+calendar.dimmedBackgroundAlpha = CGFloat
+calendar.headerViewBackgroundColor = UIColor
+calendar.bodyViewBackgroundColor = UIColor
+calendar.sundayColor = UIColor
+calendar.disabledSundayColor = UIColor
+calendar.saturdayColor = UIColor
+calendar.disabledSaturdayColor = UIColor
+calendar.defaultDayColor = UIColor
+calendar.disabledDefaultDayColor = UIColor
+calendar.lineSeparatorColor = UIColor
+calendar.selectedDayColor = UIColor
+calendar.headerLabelFont = UIFont
+calendar.weekLabelFont = UIFont
+calendar.dayLabelFont = UIFont
 ```
 
 ## Calendar Type

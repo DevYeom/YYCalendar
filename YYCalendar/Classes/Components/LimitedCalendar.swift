@@ -30,7 +30,7 @@ import UIKit
     var dayStackView: UIStackView!
 
     // MARK: - Calendar Style
-    var buttonStyle: ButtonStyle = .roundishSquare
+    var dayButtonStyle: DayButtonStyle = .roundishSquare
     var hideDuration: Double = 0.3
     var dimmedBackgroundColor: UIColor = UIColor.black
     var dimmedBackgroundAlpha: CGFloat = 0.5
@@ -310,7 +310,7 @@ import UIKit
             tempStackView.distribution = .fillEqually
 
             for column in 1...7 {
-                let tempButton = DayButton(style: buttonStyle)
+                let tempButton = DayButton(style: dayButtonStyle)
                 tempButton.translatesAutoresizingMaskIntoConstraints = false
                 tempButton.heightAnchor.constraint(equalTo: tempButton.widthAnchor).isActive = true
                 tempButton.titleLabel?.font = self.dayLabelFont
