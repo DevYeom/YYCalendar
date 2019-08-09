@@ -36,6 +36,20 @@ import Foundation
     }
 
     // MARK: - Calendar Style Properties
+    public var buttonStyle: ButtonStyle = .roundishSquare {
+        didSet {
+            weak var weakSelf = self
+            if let weakSelf = weakSelf {
+                switch componentType {
+                case .normal:
+                    weakSelf.normalCalendar?.buttonStyle = buttonStyle
+                case .limited:
+                    weakSelf.limitedCalendar?.buttonStyle = buttonStyle
+                }
+            }
+        }
+    }
+
     public var dimmedBackgroundColor: UIColor = UIColor.black {
         didSet {
             weak var weakSelf = self
@@ -185,6 +199,20 @@ import Foundation
                     weakSelf.normalCalendar?.lineSeparatorColor = lineSeparatorColor
                 case .limited:
                     weakSelf.limitedCalendar?.lineSeparatorColor = lineSeparatorColor
+                }
+            }
+        }
+    }
+
+    public var selectedDayColor: UIColor = Useful.getUIColor(55, 137, 220) {
+        didSet {
+            weak var weakSelf = self
+            if let weakSelf = weakSelf {
+                switch componentType {
+                case .normal:
+                    weakSelf.normalCalendar?.selectedDayColor = selectedDayColor
+                case .limited:
+                    weakSelf.limitedCalendar?.selectedDayColor = selectedDayColor
                 }
             }
         }

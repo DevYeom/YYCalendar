@@ -10,16 +10,32 @@ import Foundation
 @available(iOS 10.0, *)
 class DayButton: UIButton {
     let todayIconImage: UIImage? = UIImage(named: "today_icon", in: Bundle(for: DayButton.self), compatibleWith: nil)
-    let selectedDayColor: UIColor = Useful.getUIColor(55, 137, 220)
+    var selectedDayColor: UIColor = Useful.getUIColor(55, 137, 220)
     var beforeTextColor: UIColor = Useful.getUIColor(51, 51, 51)
     var todayIconImageView: UIImageView!
+    var buttonStyle: ButtonStyle = .roundishSquare
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    // To set the buttonStyle
+    override var bounds: CGRect {
+        didSet {
+            switch buttonStyle {
+            case .roundishSquare:
+                self.layer.cornerRadius = 10
+            case .square:
+                self.layer.cornerRadius = 0
+            case .circle:
+                self.layer.cornerRadius = self.bounds.width / 2
+            }
+        }
+    }
+
+    init(style: ButtonStyle) {
+        super.init(frame: CGRect.zero)
 
         setupTodayIcon()
         setupAutoLayout()
 
+        self.buttonStyle = style
         self.todayIconImageView.isHidden = true
     }
 

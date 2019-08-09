@@ -30,6 +30,7 @@ import UIKit
     var dayStackView: UIStackView!
 
     // MARK: - Calendar Style
+    var buttonStyle: ButtonStyle = .roundishSquare
     var hideDuration: Double = 0.3
     var dimmedBackgroundColor: UIColor = UIColor.black
     var dimmedBackgroundAlpha: CGFloat = 0.5
@@ -42,6 +43,7 @@ import UIKit
     var defaultDayColor: UIColor = Useful.getUIColor(51, 51, 51)
     var disabledDefaultDayColor: UIColor = Useful.getUIColor(193, 193, 193)
     var lineSeparatorColor: UIColor = Useful.getUIColor(233, 233, 233)
+    var selectedDayColor: UIColor = Useful.getUIColor(55, 137, 220)
     var headerLabelFont: UIFont = UIFont.systemFont(ofSize: 24)
     var weekLabelFont: UIFont = UIFont.systemFont(ofSize: 16)
     var dayLabelFont: UIFont = UIFont.systemFont(ofSize: 19)
@@ -298,11 +300,11 @@ import UIKit
             tempStackView.distribution = .fillEqually
 
             for column in 1...7 {
-                let tempButton = DayButton.init(type: .custom)
+                let tempButton = DayButton(style: buttonStyle)
                 tempButton.translatesAutoresizingMaskIntoConstraints = false
                 tempButton.heightAnchor.constraint(equalTo: tempButton.widthAnchor).isActive = true
                 tempButton.titleLabel?.font = self.dayLabelFont
-                tempButton.layer.cornerRadius = 10
+                tempButton.selectedDayColor = self.selectedDayColor
 
                 if column == 1 { // Sunday
                     tempButton.setTitleColor(self.sundayColor, for: .normal)

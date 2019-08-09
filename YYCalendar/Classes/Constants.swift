@@ -30,3 +30,9 @@ public enum LangType {
     case KOR
     case CHN
 }
+
+public enum ButtonStyle {
+    case roundishSquare
+    case square
+    case circle
+}
