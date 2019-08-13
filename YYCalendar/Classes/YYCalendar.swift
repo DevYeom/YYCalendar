@@ -15,12 +15,12 @@ import Foundation
     public var limitedCalendar: LimitedCalendar?
 
     // MARK: - Initialization
-    public init(normalCalendarLangType langType: LangType, date: String, format: String, completion: SelectHandler?) {
+    public init(normalCalendarLangType langType: LangType, date: String, format: String, completion: @escaping SelectHandler) {
         componentType = .normal
         normalCalendar = NormalCalendar.init(langType: langType, date: date, format: format, completion: completion)
     }
 
-    public init(limitedCalendarLangType langType: LangType, date: String, minDate: String?, maxDate: String?, format: String, completion: SelectHandler?) {
+    public init(limitedCalendarLangType langType: LangType, date: String, minDate: String?, maxDate: String?, format: String, completion: @escaping SelectHandler) {
         componentType = .limited
         limitedCalendar = LimitedCalendar.init(langType: langType, date: date, minDate: minDate, maxDate: maxDate, format: format, completion: completion)
     }

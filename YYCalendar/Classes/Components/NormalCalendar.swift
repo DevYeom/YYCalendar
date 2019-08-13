@@ -91,7 +91,7 @@ import UIKit
     var todayDay: Int = Calendar.current.component(.day, from: Date())
 
     // MARK: - Initialization
-    public init(langType type: LangType, date: String, format: String, completion selectHandler: SelectHandler?) {
+    public init(langType type: LangType, date: String, format: String, completion selectHandler: @escaping SelectHandler) {
         super.init(nibName: nil, bundle: nil)
         self.langType = type
         self.dateFormat = format
