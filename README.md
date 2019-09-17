@@ -84,7 +84,8 @@ Week label can be changed by selecting langType
 | ENG2 | Sun, Mon, Tue, Wed, Thu, Fri, Sat |
 | ENG3 | S, M, T, W, T, F, S |
 | KOR | 일, 월, 화, 수, 목, 금, 토 |
-| CHN | 日, 月, 火, 水, 木, 金, 土 |
+| JPN | 日, 月, 火, 水, 木, 金, 土 |
+| CHN | 日, 一, 二, 三, 四, 五, 六 |
 
 ![ENG_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng_week.png) ![ENG2_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng2_week.png) ![ENG3_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng3_week.png) ![KOR_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/kor_week.png) ![CHN_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/chn_week.png)
 
