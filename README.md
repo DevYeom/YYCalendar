@@ -87,7 +87,7 @@ Week label can be changed by selecting langType
 | JPN | 日, 月, 火, 水, 木, 金, 土 |
 | CHN | 日, 一, 二, 三, 四, 五, 六 |
 
-![ENG_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng_week.png) ![ENG2_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng2_week.png) ![ENG3_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng3_week.png) ![KOR_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/kor_week.png) ![CHN_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/chn_week.png)
+![ENG_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng_week.png) ![ENG2_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng2_week.png) ![ENG3_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng3_week.png) ![KOR_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/kor_week.png) ![JPN_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/jpn_week.png) ![CHN_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/chn_week.png)
 
 ## Installation
 
