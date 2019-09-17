@@ -127,6 +127,8 @@ import UIKit
             self.weekArray = ENG3_WEEK
         case .KOR:
             self.weekArray = KOR_WEEK
+        case .JPN:
+            self.weekArray = JPN_WEEK
         case .CHN:
             self.weekArray = CHN_WEEK
         }
