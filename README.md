@@ -1,6 +1,6 @@
 # YYCalendar
 
-![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-5.2-orange.svg)
 [![Version](https://img.shields.io/cocoapods/v/YYCalendar.svg?style=flat)](https://cocoapods.org/pods/YYCalendar)
 [![License](https://img.shields.io/cocoapods/l/YYCalendar.svg?style=flat)](https://cocoapods.org/pods/YYCalendar)
 [![Platform](https://img.shields.io/cocoapods/p/YYCalendar.svg?style=flat)](https://cocoapods.org/pods/YYCalendar)
