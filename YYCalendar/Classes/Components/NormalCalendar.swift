@@ -382,14 +382,14 @@ import UIKit
         self.closeButton.widthAnchor.constraint(equalTo: self.closeButton.heightAnchor).isActive = true
 
         // Month, Year Select Button
-        self.yearLeftButton.heightAnchor.constraint(equalToConstant: 35)
-        self.yearLeftButton.widthAnchor.constraint(equalToConstant: 30)
-        self.yearRightButton.heightAnchor.constraint(equalToConstant: 35)
-        self.yearRightButton.widthAnchor.constraint(equalToConstant: 30)
-        self.monthLeftButton.heightAnchor.constraint(equalToConstant: 35)
-        self.monthLeftButton.widthAnchor.constraint(equalToConstant: 30)
-        self.monthRightButton.heightAnchor.constraint(equalToConstant: 35)
-        self.monthRightButton.widthAnchor.constraint(equalToConstant: 30)
+        self.yearLeftButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        self.yearLeftButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        self.yearRightButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        self.yearRightButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        self.monthLeftButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        self.monthLeftButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        self.monthRightButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        self.monthRightButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
 
         // SelectMonthYear StackView
         self.selectMonthYearStackView.topAnchor.constraint(equalTo: self.headerView.topAnchor, constant: 20).isActive = true
