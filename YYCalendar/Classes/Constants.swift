@@ -8,9 +8,11 @@
 import Foundation
 
 // MARK: - Type Alias
+
 public typealias SelectHandler = (String) -> ()
 
 // MARK: - Enumerations
+
 public enum ComponentType {
     case normal
     case limited
