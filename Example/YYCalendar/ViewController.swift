@@ -23,16 +23,22 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showCalendar(_ sender: UIButton) {
-        let calendar = YYCalendar(normalCalendarLangType: .ENG, date: "07/01/2019", format: "MM/dd/yyyy") { (date) in
-            self.selectedDateLabel.text = date
+        let calendar = YYCalendar(normalCalendarLangType: .ENG,
+                                  date: "07/01/2019",
+                                  format: "MM/dd/yyyy") { [weak self] date in
+            self?.selectedDateLabel.text = date
         }
 
         calendar.show()
     }
 
     @IBAction func showCalendar2(_ sender: UIButton) {
-        let calendar = YYCalendar(limitedCalendarLangType: .KOR, date: "07/10/2019", minDate: "07/05/2019", maxDate: "07/20/2019", format: "MM/dd/yyyy") { (date) in
-            self.selectedDateLabel.text = date
+        let calendar = YYCalendar(limitedCalendarLangType: .KOR,
+                                  date: "07/10/2019",
+                                  minDate: "07/05/2019",
+                                  maxDate: "07/20/2019",
+                                  format: "MM/dd/yyyy") { [weak self] date in
+            self?.selectedDateLabel.text = date
         }
 
         calendar.show()
