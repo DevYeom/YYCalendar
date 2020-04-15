@@ -86,7 +86,7 @@ class Useful {
     }
 }
 
-extension Date {
+internal extension Date {
     func startOfMonth() -> Date {
         var dateComponent = Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self))
         dateComponent.hour = 12
@@ -98,5 +98,20 @@ extension Date {
 
     func endOfMonth() -> Date {
         return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+    }
+}
+
+internal extension UIApplication {
+    class func topViewController(root: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+
+        if let navigation = root as? UINavigationController {
+            return topViewController(root: navigation.visibleViewController)
+        } else if let tab = root as? UITabBarController, let selected = tab.selectedViewController {
+            return topViewController(root: selected)
+        } else if let presented = root?.presentedViewController {
+            return topViewController(root: presented)
+        }
+
+        return root
     }
 }
