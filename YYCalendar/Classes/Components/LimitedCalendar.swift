@@ -124,9 +124,14 @@ import UIKit
         super.init(coder: aDecoder)
     }
 
-    // Cannot use when keywindow is nil
+    // Cannot use when windows is nil
     func windowNotReady() -> Bool {
-        return UIApplication.shared.windows.first == nil
+        if UIApplication.shared.windows.isEmpty {
+            #if DEBUG
+            print("📆 YYCalendar Error ::: It can't initialize calendar. Because the application has no window.")
+            #endif
+        }
+        return UIApplication.shared.windows.isEmpty
     }
 
     // MARK: - Setup
