@@ -8,9 +8,10 @@
 import UIKit
 
 @available(iOS 10.0, *)
-@objcMembers public class LimitedCalendar: UIViewController {
+@objcMembers open class LimitedCalendar: UIViewController {
 
-    // MARK: - UI Property
+    // MARK: - UI Properties
+
     var previousWindow: UIWindow!
     var contentViewWindow: UIWindow!
     var backgroundView: UIView!
@@ -30,6 +31,7 @@ import UIKit
     var dayStackView: UIStackView!
 
     // MARK: - Calendar Style
+
     var dayButtonStyle: DayButtonStyle = .roundishSquare
     var hideDuration: Double = 0.3
     var dimmedBackgroundColor: UIColor = UIColor.black
@@ -67,13 +69,14 @@ import UIKit
         }
     }
 
-    // MARK: - Data Property
+    // MARK: - Data Properties
+
     public var selectHandler: SelectHandler?
     public var inquiryDate: Date = Date() // input date from client
     public var dateFormat: String = "" // input date format from client
     public var langType: LangType = .ENG // default value is English
     let calendar: Calendar = Calendar(identifier: .gregorian)
-    var weekArray: [String] = ENG_WEEK
+    var weekArray: [String] = []
 
     // Detached from inquiryDate
     var inputYear: Int = 0
@@ -93,6 +96,7 @@ import UIKit
     var maxDate: Date = Date() // limited maximum date
 
     // MARK: - Initialization
+
     public init(langType type: LangType, date: String, minDate: String?, maxDate: String?, format: String, completion selectHandler: @escaping SelectHandler) {
         super.init(nibName: nil, bundle: nil)
         self.langType = type
@@ -116,7 +120,7 @@ import UIKit
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
@@ -126,22 +130,10 @@ import UIKit
     }
 
     // MARK: - Setup
+
     // Week label can be changed by selecting langType
     func setupLangType() {
-        switch self.langType {
-        case .ENG:
-            self.weekArray = ENG_WEEK
-        case .ENG2:
-            self.weekArray = ENG2_WEEK
-        case .ENG3:
-            self.weekArray = ENG3_WEEK
-        case .KOR:
-            self.weekArray = KOR_WEEK
-        case .JPN:
-            self.weekArray = JPN_WEEK
-        case .CHN:
-            self.weekArray = CHN_WEEK
-        }
+        self.weekArray = self.langType.week
     }
 
     // Set date componet by detaching from inquiryDate
@@ -391,16 +383,6 @@ import UIKit
         self.closeButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
         self.closeButton.widthAnchor.constraint(equalTo: self.closeButton.heightAnchor).isActive = true
 
-        // Month, Year Select Button
-        self.yearLeftButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        self.yearLeftButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        self.yearRightButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        self.yearRightButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        self.monthLeftButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        self.monthLeftButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        self.monthRightButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        self.monthRightButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
-
         // SelectMonthYear StackView
         self.selectMonthYearStackView.topAnchor.constraint(equalTo: self.headerView.topAnchor, constant: 20).isActive = true
         self.selectMonthYearStackView.centerXAnchor.constraint(equalTo: self.headerView.centerXAnchor).isActive = true
@@ -530,6 +512,7 @@ import UIKit
     }
 
     // MARK: - Click Event
+
     @objc func changeMonthOrYear(_ sender: UIButton) {
         switch sender.restorationIdentifier {
         case "previousMonth":
@@ -564,11 +547,13 @@ import UIKit
     }
 
     // MARK: - Life Cycle
+
     override public func viewDidLoad() {
         super.viewDidLoad()
     }
 
     // MARK: - LimitedCalendar Usage
+
     public func show() {
         DispatchQueue.main.async {
             if self.viewNotReady() {
