@@ -27,6 +27,8 @@ import UIKit
     var selectMonthYearStackView: UIStackView!
     var weekStackView: UIStackView!
     var dayStackView: UIStackView!
+    private var contentViewWidthByViewWidthConstarint: NSLayoutConstraint!
+    private var contentViewWidthByViewHeightConstarint: NSLayoutConstraint!
 
     // MARK: - Calendar Style
 
@@ -331,9 +333,11 @@ import UIKit
         self.backgroundView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
 
         // ContentView
-        self.contentView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16).isActive = true
-        self.contentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16).isActive = true
+        self.contentViewWidthByViewWidthConstarint = self.contentView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.82)
+        self.contentViewWidthByViewHeightConstarint = self.contentView.widthAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.82)
+        self.contentView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         self.contentView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        setLandscapeMode(UIDevice.current.orientation.isLandscape)
 
         // HeaderView
         self.headerView.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
@@ -486,10 +490,31 @@ import UIKit
         }
     }
 
-    // MARK: - Life Cycle
+    // MARK: - View Life Cycle
 
     override public func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        switch UIDevice.current.orientation {
+        case .portrait, .portraitUpsideDown:
+            setLandscapeMode(false)
+        case .landscapeLeft, .landscapeRight:
+            setLandscapeMode(true)
+        default:
+            break
+        }
+    }
+
+    private func setLandscapeMode(_ isOn: Bool) {
+        if isOn {
+            self.contentViewWidthByViewWidthConstarint.isActive = !isOn
+            self.contentViewWidthByViewHeightConstarint.isActive = isOn
+        } else {
+            self.contentViewWidthByViewHeightConstarint.isActive = isOn
+            self.contentViewWidthByViewWidthConstarint.isActive = !isOn
+        }
     }
 
     // MARK: - NormalCalendar Usage
