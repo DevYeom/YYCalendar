@@ -12,8 +12,6 @@ import UIKit
 
     // MARK: - UI Properties
 
-    var previousWindow: UIWindow!
-    var contentViewWindow: UIWindow!
     var backgroundView: UIView!
     var contentView: UIView!
     var headerView: UIView!
@@ -114,8 +112,8 @@ import UIKit
     }
 
     // Cannot use when keywindow is nil
-    func viewNotReady() -> Bool {
-        return UIApplication.shared.keyWindow == nil
+    func windowNotReady() -> Bool {
+        return UIApplication.shared.windows.first == nil
     }
 
     // MARK: - Setup
@@ -153,20 +151,8 @@ import UIKit
         }
     }
 
-    func setupWindow() {
-        if viewNotReady() {
-            return
-        }
-
-        let window = UIWindow(frame: (UIApplication.shared.keyWindow?.bounds)!)
-        self.contentViewWindow = window
-        self.contentViewWindow.backgroundColor = UIColor.clear
-        self.contentViewWindow.rootViewController = self
-        self.previousWindow = UIApplication.shared.keyWindow
-    }
-
     func setupViews() {
-        if viewNotReady() {
+        if windowNotReady() {
             return
         }
 
@@ -510,37 +496,28 @@ import UIKit
 
     public func show() {
         DispatchQueue.main.async {
-            if self.viewNotReady() {
+            if self.windowNotReady() {
                 return
             }
 
             self.setupViews()
-            self.setupWindow()
             self.setupAutoLayout()
             self.setupCalendar()
 
-            self.contentViewWindow.addSubview(self.view)
-            self.contentViewWindow.makeKeyAndVisible()
+            self.modalPresentationStyle = .overFullScreen
+            UIApplication.topViewController()?.present(self, animated: false, completion: nil)
         }
     }
 
     @objc public func dismissView() {
         DispatchQueue.main.async {
-            let completion = { (complete: Bool) -> Void in
-                if complete {
-                    self.view.removeFromSuperview()
-                    self.contentViewWindow.isHidden = true
-                    self.contentViewWindow = nil
-                    self.previousWindow.makeKeyAndVisible()
-                    self.previousWindow = nil
-                }
-            }
-
             self.view.alpha = 1
 
             UIView.animate(withDuration: self.hideDuration, animations: {
                 self.view.alpha = 0
-            }, completion: completion)
+            }, completion: { _ in
+                self.dismiss(animated: false, completion: nil)
+            })
         }
     }
 }
