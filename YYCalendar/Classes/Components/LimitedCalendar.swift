@@ -220,8 +220,8 @@ import UIKit
 
         // Setup CloseButton
         self.closeButton = UIButton.init(type: .custom)
-        self.closeButton.setBackgroundImage(Image.forButton.close, for: .normal)
-        self.closeButton.setBackgroundImage(Image.forButton.highlightedClose, for: .highlighted)
+        self.closeButton.setBackgroundImage(Image.close, for: .normal)
+        self.closeButton.setBackgroundImage(Image.highlightedClose, for: .highlighted)
         self.closeButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         self.headerView.addSubview(self.closeButton)
 
@@ -238,14 +238,14 @@ import UIKit
         self.yearRightButton = UIButton.init(type: .custom)
         self.monthLeftButton = UIButton.init(type: .custom)
         self.monthRightButton = UIButton.init(type: .custom)
-        self.yearLeftButton.setImage(Image.forButton.leftArrow, for: .normal)
-        self.yearLeftButton.setImage(Image.forButton.highlightedLeftArrow, for: .highlighted)
-        self.yearRightButton.setImage(Image.forButton.rightArrow, for: .normal)
-        self.yearRightButton.setImage(Image.forButton.highlightedRightArrow, for: .highlighted)
-        self.monthLeftButton.setImage(Image.forButton.leftArrow, for: .normal)
-        self.monthLeftButton.setImage(Image.forButton.highlightedLeftArrow, for: .highlighted)
-        self.monthRightButton.setImage(Image.forButton.rightArrow, for: .normal)
-        self.monthRightButton.setImage(Image.forButton.highlightedRightArrow, for: .highlighted)
+        self.yearLeftButton.setImage(Image.leftArrow, for: .normal)
+        self.yearLeftButton.setImage(Image.highlightedLeftArrow, for: .highlighted)
+        self.yearRightButton.setImage(Image.rightArrow, for: .normal)
+        self.yearRightButton.setImage(Image.highlightedRightArrow, for: .highlighted)
+        self.monthLeftButton.setImage(Image.leftArrow, for: .normal)
+        self.monthLeftButton.setImage(Image.highlightedLeftArrow, for: .highlighted)
+        self.monthRightButton.setImage(Image.rightArrow, for: .normal)
+        self.monthRightButton.setImage(Image.highlightedRightArrow, for: .highlighted)
         self.yearLeftButton.restorationIdentifier = "previousYear"
         self.yearRightButton.restorationIdentifier = "nextYear"
         self.monthLeftButton.restorationIdentifier = "previousMonth"

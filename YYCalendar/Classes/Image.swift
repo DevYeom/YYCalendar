@@ -9,29 +9,27 @@ import Foundation
 
 @available(iOS 10.0, *)
 enum Image {
-    case forButton
-
-    var leftArrow: UIImage? {
+    static var leftArrow: UIImage? {
         return UIImage(named: "calendar_prev", in: Bundle(for: YYCalendar.self), compatibleWith: nil)
     }
 
-    var highlightedLeftArrow: UIImage? {
+    static var highlightedLeftArrow: UIImage? {
         return UIImage(named: "calendar_prev_pr", in: Bundle(for: YYCalendar.self), compatibleWith: nil)
     }
 
-    var rightArrow: UIImage? {
+    static var rightArrow: UIImage? {
         return UIImage(named: "calendar_next", in: Bundle(for: YYCalendar.self), compatibleWith: nil)
     }
 
-    var highlightedRightArrow: UIImage? {
+    static var highlightedRightArrow: UIImage? {
         return UIImage(named: "calendar_next_pr", in: Bundle(for: YYCalendar.self), compatibleWith: nil)
     }
 
-    var close: UIImage? {
+    static var close: UIImage? {
         return UIImage(named: "top_btn_close", in: Bundle(for: YYCalendar.self), compatibleWith: nil)
     }
 
-    var highlightedClose: UIImage? {
+    static var highlightedClose: UIImage? {
         return UIImage(named: "top_btn_close_pr", in: Bundle(for: YYCalendar.self), compatibleWith: nil)
     }
 }
