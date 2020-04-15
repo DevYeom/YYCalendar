@@ -27,8 +27,8 @@ First of all, you can show the calendar as below:<br>
 > *you have to equate **format** of date parameter with format parameter.*
 
 ```swift
-let calendar = YYCalendar(normalCalendarLangType: .ENG, date: "07/01/2019", format: "MM/dd/yyyy") { (date) in
-    self.selectedDateLabel.text = date
+let calendar = YYCalendar(normalCalendarLangType: .ENG, date: "07/01/2019", format: "MM/dd/yyyy") { date in
+    print(date)
 }
 
 calendar.show()
@@ -66,17 +66,17 @@ There are two types of calendar.
 
 ```swift
 // normal type
-init(normalCalendarLangType langType: LangType, date: String, format: String, completion: SelectHandler?)
+init(normalCalendarLangType langType: LangType, date: String, format: String, completion: @escaping SelectHandler)
 
 // limited type
-init(limitedCalendarLangType langType: LangType, date: String, minDate: String?, maxDate: String?, format: String, completion: SelectHandler?)
+init(limitedCalendarLangType langType: LangType, date: String, minDate: String?, maxDate: String?, format: String, completion: @escaping SelectHandler)
 ```
 
 ![normalType_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/normal_type.png) ![limitedType_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/limited_type.png)
 
 ## Language Type
 
-Week label can be changed by selecting langType
+The week label can be changed by selecting langType.
 
 | langType | weekLabel |
 |---|---|
@@ -86,8 +86,20 @@ Week label can be changed by selecting langType
 | KOR | 일, 월, 화, 수, 목, 금, 토 |
 | JPN | 日, 月, 火, 水, 木, 金, 土 |
 | CHN | 日, 一, 二, 三, 四, 五, 六 |
+| custom | [String] |
 
 ![ENG_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng_week.png) ![ENG2_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng2_week.png) ![ENG3_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/eng3_week.png) ![KOR_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/kor_week.png) ![JPN_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/jpn_week.png) ![CHN_Sample](https://raw.githubusercontent.com/DevYeom/YYCalendar/master/ScreenShot/chn_week.png)
+
+You can assign custom week label as below.
+
+```swift
+let weekArray = ["1", "2", "3", "4", "5", "6", "7"]
+let calendar = YYCalendar(normalCalendarLangType: .custom(weekArray), date: "07/01/2019", format: "MM/dd/yyyy") { date in
+    print(date)
+}
+
+calendar.show()
+```
 
 ## Installation
 

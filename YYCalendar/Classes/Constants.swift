@@ -25,6 +25,7 @@ public enum LangType {
     case KOR
     case JPN
     case CHN
+    case custom(_ weekArray: [String])
 
     var week: [String] {
         switch self {
@@ -40,6 +41,8 @@ public enum LangType {
             return ["日", "月", "火", "水", "木", "金", "土"]
         case .CHN:
             return ["日", "一", "二", "三", "四", "五", "六"]
+        case .custom(let weekArray):
+            return weekArray
         }
     }
 }
