@@ -8,7 +8,7 @@
 import Foundation
 
 @available(iOS 10.0, *)
-class DayButton: UIButton {
+open class DayButton: UIButton {
     let todayIconImage: UIImage? = UIImage(named: "today_icon", in: Bundle(for: DayButton.self), compatibleWith: nil)
     var selectedDayColor: UIColor = Useful.getUIColor(55, 137, 220)
     var beforeTextColor: UIColor = Useful.getUIColor(51, 51, 51)
@@ -16,7 +16,7 @@ class DayButton: UIButton {
     var dayButtonStyle: DayButtonStyle = .roundishSquare
 
     // To set the dayButtonStyle
-    override var bounds: CGRect {
+    open override var bounds: CGRect {
         didSet {
             switch dayButtonStyle {
             case .roundishSquare:
@@ -39,11 +39,11 @@ class DayButton: UIButton {
         self.todayIconImageView.isHidden = true
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
-    override var isHighlighted: Bool {
+    open override var isHighlighted: Bool {
         willSet {
             beforeTextColor = titleLabel?.textColor ?? Useful.getUIColor(51, 51, 51)
         }

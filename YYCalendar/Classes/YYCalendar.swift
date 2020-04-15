@@ -8,13 +8,15 @@
 import Foundation
 
 @available(iOS 10.0, *)
-@objcMembers public class YYCalendar {
+@objcMembers open class YYCalendar {
     // MARK: - Component Varialbes
-    public var componentType: Components
+
+    public var componentType: ComponentType
     public var normalCalendar: NormalCalendar?
     public var limitedCalendar: LimitedCalendar?
 
     // MARK: - Initialization
+
     public init(normalCalendarLangType langType: LangType, date: String, format: String, completion: @escaping SelectHandler) {
         componentType = .normal
         normalCalendar = NormalCalendar.init(langType: langType, date: date, format: format, completion: completion)
@@ -26,6 +28,7 @@ import Foundation
     }
 
     // MARK: - Usage
+
     public func show() {
         switch componentType {
         case .normal:
@@ -36,6 +39,7 @@ import Foundation
     }
 
     // MARK: - Calendar Style Properties
+
     public var dayButtonStyle: DayButtonStyle = .roundishSquare {
         didSet {
             weak var weakSelf = self
